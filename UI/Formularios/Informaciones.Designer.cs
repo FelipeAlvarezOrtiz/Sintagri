@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PanelInformaciones = new System.Windows.Forms.Panel();
+            this.Panel_Informaciones = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // PanelInformaciones
+            // Panel_Informaciones
             // 
-            this.PanelInformaciones.BackColor = System.Drawing.Color.White;
-            this.PanelInformaciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelInformaciones.Location = new System.Drawing.Point(0, 0);
-            this.PanelInformaciones.Name = "PanelInformaciones";
-            this.PanelInformaciones.Size = new System.Drawing.Size(432, 562);
-            this.PanelInformaciones.TabIndex = 0;
+            this.Panel_Informaciones.BackColor = System.Drawing.Color.White;
+            this.Panel_Informaciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Panel_Informaciones.Location = new System.Drawing.Point(0, 0);
+            this.Panel_Informaciones.Name = "Panel_Informaciones";
+            this.Panel_Informaciones.Size = new System.Drawing.Size(432, 562);
+            this.Panel_Informaciones.TabIndex = 0;
             // 
             // Informaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(432, 562);
-            this.Controls.Add(this.PanelInformaciones);
+            this.Controls.Add(this.Panel_Informaciones);
             this.Name = "Informaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informaciones";
@@ -55,6 +55,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel PanelInformaciones;
+        private System.Windows.Forms.Panel Panel_Informaciones;
     }
 }

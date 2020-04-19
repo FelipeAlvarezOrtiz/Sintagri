@@ -1,14 +1,21 @@
-﻿namespace Sintagri.Modelo.Entidades.Insumos
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Sintagri.Modelo.Entidades.Insumos
 {
     public enum Presentacion
     {
-        Saco = 1,
-        Envase = 2,
+        Saco = 0,
+        Envase = 1,
     }
 
-    public class Insumos
+    public abstract class Insumos
     {
-        public string Nombre_Comercial { get; set; }
+        [Required, Key]
+        protected private uint ID_Insumo;
+        [Required, MaxLength(100)]
+        protected private string Nombre_Comercial;
+        [Required,Column("Presentacion",TypeName = "int")]
         public Presentacion Presentacion_Insumo { get; set; }
         public int Costo_Neto { get; set; }
         public int Costo_Total { get; set; }

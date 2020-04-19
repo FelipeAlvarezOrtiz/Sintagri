@@ -11,7 +11,9 @@ namespace Sintagri.UI.Formularios
             _controlDesplegable.Dock = DockStyle.Fill;
             Width = _controlDesplegable.Width;
             Height = _controlDesplegable.Height;
-            PanelInformaciones.Controls.Add(_controlDesplegable);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Panel_Informaciones.Controls.Add(_controlDesplegable);
         }
     }
 }

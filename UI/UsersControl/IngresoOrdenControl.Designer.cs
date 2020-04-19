@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngresoOrdenControl));
             this.MainLayout = new System.Windows.Forms.TableLayoutPanel();
             this.TopLayout = new System.Windows.Forms.TableLayoutPanel();
             this.AgricolaLayout = new System.Windows.Forms.TableLayoutPanel();
@@ -77,8 +79,8 @@
             this.maquinada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unidad_insumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.EliminarButton = new System.Windows.Forms.Button();
-            this.GenerarButton = new System.Windows.Forms.Button();
+            this.Ingresar_Orden_Button = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.Cancelar_Orden_Button = new Bunifu.Framework.UI.BunifuThinButton2();
             this.MainLayout.SuspendLayout();
             this.TopLayout.SuspendLayout();
             this.AgricolaLayout.SuspendLayout();
@@ -174,7 +176,7 @@
             // Maquinadas
             // 
             this.Maquinadas.AutoSize = true;
-            this.Maquinadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
+            this.Maquinadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
             this.Maquinadas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Maquinadas.Location = new System.Drawing.Point(1158, 95);
             this.Maquinadas.Margin = new System.Windows.Forms.Padding(3);
@@ -187,7 +189,7 @@
             // Mojamiento
             // 
             this.Mojamiento.AutoSize = true;
-            this.Mojamiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
+            this.Mojamiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
             this.Mojamiento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Mojamiento.Location = new System.Drawing.Point(696, 95);
             this.Mojamiento.Margin = new System.Windows.Forms.Padding(3);
@@ -200,7 +202,7 @@
             // Variedad
             // 
             this.Variedad.AutoSize = true;
-            this.Variedad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
+            this.Variedad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
             this.Variedad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Variedad.Location = new System.Drawing.Point(234, 95);
             this.Variedad.Margin = new System.Windows.Forms.Padding(3);
@@ -213,7 +215,7 @@
             // Cultivo
             // 
             this.Cultivo.AutoSize = true;
-            this.Cultivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
+            this.Cultivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
             this.Cultivo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Cultivo.Location = new System.Drawing.Point(1158, 49);
             this.Cultivo.Margin = new System.Windows.Forms.Padding(3);
@@ -226,7 +228,7 @@
             // TotalHectareas
             // 
             this.TotalHectareas.AutoSize = true;
-            this.TotalHectareas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
+            this.TotalHectareas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
             this.TotalHectareas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TotalHectareas.Location = new System.Drawing.Point(696, 49);
             this.TotalHectareas.Margin = new System.Windows.Forms.Padding(3);
@@ -238,7 +240,7 @@
             // 
             // SubsectorLayout
             // 
-            this.SubsectorLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
+            this.SubsectorLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
             this.SubsectorLayout.ColumnCount = 2;
             this.SubsectorLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86F));
             this.SubsectorLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14F));
@@ -254,6 +256,7 @@
             // 
             // SubsectorFind
             // 
+            this.SubsectorFind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
             this.SubsectorFind.Image = global::Sintagri.Properties.Resources.search;
             this.SubsectorFind.Location = new System.Drawing.Point(196, 3);
             this.SubsectorFind.Name = "SubsectorFind";
@@ -266,6 +269,7 @@
             // SubsectorSeleccionado
             // 
             this.SubsectorSeleccionado.AutoSize = true;
+            this.SubsectorSeleccionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
             this.SubsectorSeleccionado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SubsectorSeleccionado.Location = new System.Drawing.Point(3, 0);
             this.SubsectorSeleccionado.Name = "SubsectorSeleccionado";
@@ -276,7 +280,7 @@
             // 
             // VariedadLabel
             // 
-            this.VariedadLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(166)))), ((int)(((byte)(207)))));
+            this.VariedadLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
             this.VariedadLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.VariedadLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VariedadLabel.Location = new System.Drawing.Point(3, 95);
@@ -289,7 +293,7 @@
             // 
             // PredioLabel
             // 
-            this.PredioLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(166)))), ((int)(((byte)(207)))));
+            this.PredioLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
             this.PredioLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PredioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PredioLabel.Location = new System.Drawing.Point(3, 3);
@@ -303,7 +307,7 @@
             // EtapaLabel
             // 
             this.EtapaLabel.AutoSize = true;
-            this.EtapaLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(166)))), ((int)(((byte)(207)))));
+            this.EtapaLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
             this.EtapaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EtapaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EtapaLabel.Location = new System.Drawing.Point(465, 3);
@@ -316,7 +320,7 @@
             // 
             // MojamientoLabel
             // 
-            this.MojamientoLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(166)))), ((int)(((byte)(207)))));
+            this.MojamientoLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
             this.MojamientoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MojamientoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MojamientoLabel.Location = new System.Drawing.Point(465, 95);
@@ -330,7 +334,7 @@
             // SubsectorLabel
             // 
             this.SubsectorLabel.AutoSize = true;
-            this.SubsectorLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(166)))), ((int)(((byte)(207)))));
+            this.SubsectorLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
             this.SubsectorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SubsectorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubsectorLabel.Location = new System.Drawing.Point(3, 49);
@@ -343,7 +347,7 @@
             // 
             // THectareasLabel
             // 
-            this.THectareasLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(166)))), ((int)(((byte)(207)))));
+            this.THectareasLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
             this.THectareasLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.THectareasLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.THectareasLabel.Location = new System.Drawing.Point(465, 49);
@@ -356,7 +360,7 @@
             // 
             // MaquinadasLabel
             // 
-            this.MaquinadasLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(166)))), ((int)(((byte)(207)))));
+            this.MaquinadasLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
             this.MaquinadasLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MaquinadasLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaquinadasLabel.Location = new System.Drawing.Point(927, 95);
@@ -369,7 +373,7 @@
             // 
             // CultivoLabel
             // 
-            this.CultivoLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(166)))), ((int)(((byte)(207)))));
+            this.CultivoLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
             this.CultivoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CultivoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CultivoLabel.Location = new System.Drawing.Point(927, 49);
@@ -383,7 +387,7 @@
             // SectorLabel
             // 
             this.SectorLabel.AutoSize = true;
-            this.SectorLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(166)))), ((int)(((byte)(207)))));
+            this.SectorLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
             this.SectorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SectorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SectorLabel.Location = new System.Drawing.Point(927, 3);
@@ -396,7 +400,7 @@
             // 
             // PredioLayout
             // 
-            this.PredioLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
+            this.PredioLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
             this.PredioLayout.ColumnCount = 2;
             this.PredioLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86F));
             this.PredioLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14F));
@@ -412,6 +416,7 @@
             // 
             // PredioFind
             // 
+            this.PredioFind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
             this.PredioFind.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PredioFind.Image = global::Sintagri.Properties.Resources.search;
             this.PredioFind.Location = new System.Drawing.Point(196, 3);
@@ -425,6 +430,7 @@
             // PrediosSeleccionados
             // 
             this.PrediosSeleccionados.AutoSize = true;
+            this.PrediosSeleccionados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
             this.PrediosSeleccionados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PrediosSeleccionados.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PrediosSeleccionados.Location = new System.Drawing.Point(3, 3);
@@ -437,7 +443,7 @@
             // 
             // EtapaLayout
             // 
-            this.EtapaLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
+            this.EtapaLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
             this.EtapaLayout.ColumnCount = 2;
             this.EtapaLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.88889F));
             this.EtapaLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.11111F));
@@ -451,7 +457,7 @@
             // 
             // SectorLayout
             // 
-            this.SectorLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
+            this.SectorLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
             this.SectorLayout.ColumnCount = 2;
             this.SectorLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86F));
             this.SectorLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14F));
@@ -468,6 +474,7 @@
             // 
             // SectorFind
             // 
+            this.SectorFind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
             this.SectorFind.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SectorFind.Image = global::Sintagri.Properties.Resources.search;
             this.SectorFind.Location = new System.Drawing.Point(198, 3);
@@ -481,6 +488,7 @@
             // SectorSeleccionado
             // 
             this.SectorSeleccionado.AutoSize = true;
+            this.SectorSeleccionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
             this.SectorSeleccionado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SectorSeleccionado.Location = new System.Drawing.Point(3, 0);
             this.SectorSeleccionado.Name = "SectorSeleccionado";
@@ -512,7 +520,7 @@
             // NOAIInput
             // 
             this.NOAIInput.AutoSize = true;
-            this.NOAIInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
+            this.NOAIInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
             this.NOAIInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NOAIInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NOAIInput.Location = new System.Drawing.Point(350, 3);
@@ -525,7 +533,7 @@
             // 
             // FechaLabel
             // 
-            this.FechaLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(166)))), ((int)(((byte)(207)))));
+            this.FechaLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
             this.FechaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FechaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaLabel.Location = new System.Drawing.Point(697, 3);
@@ -538,7 +546,7 @@
             // 
             // OAILabel
             // 
-            this.OAILabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(166)))), ((int)(((byte)(207)))));
+            this.OAILabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
             this.OAILabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OAILabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OAILabel.Location = new System.Drawing.Point(3, 3);
@@ -552,7 +560,7 @@
             // fechaInput
             // 
             this.fechaInput.AutoSize = true;
-            this.fechaInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
+            this.fechaInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
             this.fechaInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fechaInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fechaInput.Location = new System.Drawing.Point(1044, 3);
@@ -642,13 +650,13 @@
             // BusquedaInsumo
             // 
             this.BusquedaInsumo.AutoSize = true;
-            this.BusquedaInsumo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(166)))), ((int)(((byte)(207)))));
+            this.BusquedaInsumo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
             this.BusquedaInsumo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BusquedaInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BusquedaInsumo.Location = new System.Drawing.Point(79, 7);
-            this.BusquedaInsumo.Margin = new System.Windows.Forms.Padding(7);
+            this.BusquedaInsumo.Location = new System.Drawing.Point(77, 5);
+            this.BusquedaInsumo.Margin = new System.Windows.Forms.Padding(5);
             this.BusquedaInsumo.Name = "BusquedaInsumo";
-            this.BusquedaInsumo.Size = new System.Drawing.Size(232, 34);
+            this.BusquedaInsumo.Size = new System.Drawing.Size(236, 38);
             this.BusquedaInsumo.TabIndex = 0;
             this.BusquedaInsumo.Text = "Búsqueda de Insumo";
             this.BusquedaInsumo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -656,20 +664,20 @@
             // FiltroLabel
             // 
             this.FiltroLabel.AutoSize = true;
-            this.FiltroLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(166)))), ((int)(((byte)(207)))));
+            this.FiltroLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
             this.FiltroLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FiltroLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FiltroLabel.Location = new System.Drawing.Point(779, 7);
-            this.FiltroLabel.Margin = new System.Windows.Forms.Padding(7);
+            this.FiltroLabel.Location = new System.Drawing.Point(777, 5);
+            this.FiltroLabel.Margin = new System.Windows.Forms.Padding(5);
             this.FiltroLabel.Name = "FiltroLabel";
-            this.FiltroLabel.Size = new System.Drawing.Size(234, 34);
+            this.FiltroLabel.Size = new System.Drawing.Size(238, 38);
             this.FiltroLabel.TabIndex = 1;
             this.FiltroLabel.Text = "Filtros";
             this.FiltroLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // InsumoInput
             // 
-            this.InsumoInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
+            this.InsumoInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
             this.InsumoInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.InsumoInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InsumoInput.Location = new System.Drawing.Point(321, 7);
@@ -680,12 +688,12 @@
             // 
             // FiltroCB
             // 
-            this.FiltroCB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
+            this.FiltroCB.BackColor = System.Drawing.Color.White;
             this.FiltroCB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FiltroCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FiltroCB.FormattingEnabled = true;
-            this.FiltroCB.Location = new System.Drawing.Point(1023, 10);
-            this.FiltroCB.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.FiltroCB.Location = new System.Drawing.Point(1023, 7);
+            this.FiltroCB.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.FiltroCB.Name = "FiltroCB";
             this.FiltroCB.Size = new System.Drawing.Size(289, 33);
             this.FiltroCB.TabIndex = 3;
@@ -693,24 +701,34 @@
             // 
             // InsumosDataGrid
             // 
+            this.InsumosDataGrid.AllowUserToAddRows = false;
             this.InsumosDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.InsumosDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.InsumosDataGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.InsumosDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(116)))), ((int)(((byte)(145)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.InsumosDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.InsumosDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.InsumosDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.InsumosDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.InsumosDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_insumo,
             this.nombre_insumo,
             this.maquinada,
             this.unidad_insumo});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.InsumosDataGrid.DefaultCellStyle = dataGridViewCellStyle5;
             this.InsumosDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.InsumosDataGrid.EnableHeadersVisualStyles = false;
             this.InsumosDataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(166)))), ((int)(((byte)(207)))));
@@ -718,8 +736,10 @@
             this.InsumosDataGrid.Margin = new System.Windows.Forms.Padding(7);
             this.InsumosDataGrid.Name = "InsumosDataGrid";
             this.InsumosDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InsumosDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
+            this.InsumosDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.InsumosDataGrid.RowTemplate.Height = 24;
             this.InsumosDataGrid.Size = new System.Drawing.Size(1380, 330);
             this.InsumosDataGrid.TabIndex = 1;
@@ -760,8 +780,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.EliminarButton, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.GenerarButton, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Ingresar_Orden_Button, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Cancelar_Orden_Button, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 401);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -771,27 +791,57 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1388, 49);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // EliminarButton
+            // Ingresar_Orden_Button
             // 
-            this.EliminarButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EliminarButton.Location = new System.Drawing.Point(280, 3);
-            this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(271, 43);
-            this.EliminarButton.TabIndex = 0;
-            this.EliminarButton.Text = "Eliminar Producto";
-            this.EliminarButton.UseVisualStyleBackColor = true;
+            this.Ingresar_Orden_Button.ActiveBorderThickness = 1;
+            this.Ingresar_Orden_Button.ActiveCornerRadius = 20;
+            this.Ingresar_Orden_Button.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.Ingresar_Orden_Button.ActiveForecolor = System.Drawing.Color.White;
+            this.Ingresar_Orden_Button.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.Ingresar_Orden_Button.BackColor = System.Drawing.Color.White;
+            this.Ingresar_Orden_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Ingresar_Orden_Button.BackgroundImage")));
+            this.Ingresar_Orden_Button.ButtonText = "Ingresar Orden";
+            this.Ingresar_Orden_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Ingresar_Orden_Button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Ingresar_Orden_Button.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.Ingresar_Orden_Button.ForeColor = System.Drawing.Color.SeaGreen;
+            this.Ingresar_Orden_Button.IdleBorderThickness = 1;
+            this.Ingresar_Orden_Button.IdleCornerRadius = 20;
+            this.Ingresar_Orden_Button.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
+            this.Ingresar_Orden_Button.IdleForecolor = System.Drawing.Color.White;
+            this.Ingresar_Orden_Button.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.Ingresar_Orden_Button.Location = new System.Drawing.Point(832, 1);
+            this.Ingresar_Orden_Button.Margin = new System.Windows.Forms.Padding(1);
+            this.Ingresar_Orden_Button.Name = "Ingresar_Orden_Button";
+            this.Ingresar_Orden_Button.Size = new System.Drawing.Size(275, 47);
+            this.Ingresar_Orden_Button.TabIndex = 0;
+            this.Ingresar_Orden_Button.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // GenerarButton
+            // Cancelar_Orden_Button
             // 
-            this.GenerarButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GenerarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GenerarButton.Location = new System.Drawing.Point(834, 3);
-            this.GenerarButton.Name = "GenerarButton";
-            this.GenerarButton.Size = new System.Drawing.Size(271, 43);
-            this.GenerarButton.TabIndex = 1;
-            this.GenerarButton.Text = "Generar Orden";
-            this.GenerarButton.UseVisualStyleBackColor = true;
+            this.Cancelar_Orden_Button.ActiveBorderThickness = 1;
+            this.Cancelar_Orden_Button.ActiveCornerRadius = 20;
+            this.Cancelar_Orden_Button.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.Cancelar_Orden_Button.ActiveForecolor = System.Drawing.Color.White;
+            this.Cancelar_Orden_Button.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.Cancelar_Orden_Button.BackColor = System.Drawing.Color.White;
+            this.Cancelar_Orden_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Cancelar_Orden_Button.BackgroundImage")));
+            this.Cancelar_Orden_Button.ButtonText = "Cancelar Orden";
+            this.Cancelar_Orden_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Cancelar_Orden_Button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Cancelar_Orden_Button.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.Cancelar_Orden_Button.ForeColor = System.Drawing.Color.SeaGreen;
+            this.Cancelar_Orden_Button.IdleBorderThickness = 1;
+            this.Cancelar_Orden_Button.IdleCornerRadius = 20;
+            this.Cancelar_Orden_Button.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
+            this.Cancelar_Orden_Button.IdleForecolor = System.Drawing.Color.White;
+            this.Cancelar_Orden_Button.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.Cancelar_Orden_Button.Location = new System.Drawing.Point(278, 1);
+            this.Cancelar_Orden_Button.Margin = new System.Windows.Forms.Padding(1);
+            this.Cancelar_Orden_Button.Name = "Cancelar_Orden_Button";
+            this.Cancelar_Orden_Button.Size = new System.Drawing.Size(275, 47);
+            this.Cancelar_Orden_Button.TabIndex = 1;
+            this.Cancelar_Orden_Button.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // IngresoOrdenControl
             // 
@@ -848,8 +898,6 @@
         private System.Windows.Forms.TableLayoutPanel BusquedaLayout;
         private System.Windows.Forms.DataGridView InsumosDataGrid;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button EliminarButton;
-        private System.Windows.Forms.Button GenerarButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_insumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_insumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn maquinada;
@@ -875,5 +923,7 @@
         private System.Windows.Forms.Label Cultivo;
         private System.Windows.Forms.Label TotalHectareas;
         private System.Windows.Forms.Label NOAIInput;
+        private Bunifu.Framework.UI.BunifuThinButton2 Ingresar_Orden_Button;
+        private Bunifu.Framework.UI.BunifuThinButton2 Cancelar_Orden_Button;
     }
 }
