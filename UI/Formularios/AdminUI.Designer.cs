@@ -30,17 +30,19 @@
         {
             this.MainLayout = new System.Windows.Forms.TableLayoutPanel();
             this.PerfilOpcionLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.MainPanel = new System.Windows.Forms.Panel();
+            this.SectionLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.PanelInfo = new System.Windows.Forms.Panel();
             this.MainLayout.SuspendLayout();
+            this.SectionLayout.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainLayout
             // 
             this.MainLayout.ColumnCount = 2;
-            this.MainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.69211F));
-            this.MainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.30789F));
+            this.MainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.633098F));
+            this.MainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 92.36691F));
             this.MainLayout.Controls.Add(this.PerfilOpcionLayout, 0, 0);
-            this.MainLayout.Controls.Add(this.MainPanel, 1, 0);
+            this.MainLayout.Controls.Add(this.SectionLayout, 1, 0);
             this.MainLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainLayout.Location = new System.Drawing.Point(0, 0);
             this.MainLayout.Name = "MainLayout";
@@ -57,19 +59,33 @@
             this.PerfilOpcionLayout.Location = new System.Drawing.Point(3, 3);
             this.PerfilOpcionLayout.Name = "PerfilOpcionLayout";
             this.PerfilOpcionLayout.RowCount = 3;
-            this.PerfilOpcionLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.PerfilOpcionLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.70861F));
+            this.PerfilOpcionLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.03973F));
+            this.PerfilOpcionLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.4702F));
             this.PerfilOpcionLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.357616F));
-            this.PerfilOpcionLayout.Size = new System.Drawing.Size(300, 755);
+            this.PerfilOpcionLayout.Size = new System.Drawing.Size(112, 755);
             this.PerfilOpcionLayout.TabIndex = 0;
             // 
-            // MainPanel
+            // SectionLayout
             // 
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(309, 3);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1247, 755);
-            this.MainPanel.TabIndex = 1;
+            this.SectionLayout.ColumnCount = 1;
+            this.SectionLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.SectionLayout.Controls.Add(this.PanelInfo, 0, 1);
+            this.SectionLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SectionLayout.Location = new System.Drawing.Point(121, 3);
+            this.SectionLayout.Name = "SectionLayout";
+            this.SectionLayout.RowCount = 2;
+            this.SectionLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.03973F));
+            this.SectionLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.96027F));
+            this.SectionLayout.Size = new System.Drawing.Size(1435, 755);
+            this.SectionLayout.TabIndex = 1;
+            // 
+            // PanelInfo
+            // 
+            this.PanelInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelInfo.Location = new System.Drawing.Point(3, 108);
+            this.PanelInfo.Name = "PanelInfo";
+            this.PanelInfo.Size = new System.Drawing.Size(1429, 644);
+            this.PanelInfo.TabIndex = 0;
             // 
             // AdminForm
             // 
@@ -83,6 +99,7 @@
             this.Text = "Administracion SINTAGRI";
             this.Load += new System.EventHandler(this.AdminForm_Load);
             this.MainLayout.ResumeLayout(false);
+            this.SectionLayout.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -91,7 +108,8 @@
 
         private System.Windows.Forms.TableLayoutPanel MainLayout;
         private System.Windows.Forms.TableLayoutPanel PerfilOpcionLayout;
-        private System.Windows.Forms.Panel MainPanel;
+        private System.Windows.Forms.TableLayoutPanel SectionLayout;
+        private System.Windows.Forms.Panel PanelInfo;
     }
 }
 

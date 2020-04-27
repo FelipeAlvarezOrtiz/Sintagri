@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Sintagri.Modelo.Entidades.Agua
+namespace Sintagri.Modelo.Entidades
 {
     public enum Origen_Agua
     {
@@ -11,33 +11,18 @@ namespace Sintagri.Modelo.Entidades.Agua
         Canal = 2,
         Mezcla = 3,
     }
-
     public class Aguas
     {
-        [Required,Key]
+        [Key,Required,
+            DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id_Agua { get; set; }
-        [Required, Column("Origen",TypeName = "int")]
+        [Required,Column("Origen")]
         public Origen_Agua Origen { get; set; }
-        [MaxLength(50)]
+        [MaxLength(50),Column("Nombre")]
         public string Nombre_Referencia { get; set; }
-        public List<PFQ> Propiedades { get; set; }
 
-        public Aguas(int _idAgua, Origen_Agua _origen,string _nombreReferencia)
-        {
-            Id_Agua = _idAgua;
-            Origen = _origen;
-            Nombre_Referencia = _nombreReferencia;
-            Propiedades = new List<PFQ>();
-        }
-
-        public Aguas(int _idAgua, Origen_Agua _origen, string _nombreReferencia,
-            List<PFQ> _propiedades)
-        {
-            Id_Agua = _idAgua;
-            Origen = _origen;
-            Nombre_Referencia = _nombreReferencia;
-            Propiedades = _propiedades;
-        }
+        //Relación 1 a Muchos
+        public ICollection<PFQ_Agua> Propiedades_Agua { get; set; }
 
     }
 }

@@ -1,23 +1,24 @@
 ﻿using Sintagri.Modelo.Entidades.Misc;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Sintagri.Modelo.Entidades.Insumos
+namespace Sintagri.Modelo.Entidades
 {
-    public class Fitosanitario : Insumos
+    public class Fitosanitario : Insumo
     {
-        public int Prioridad { get; set; }
+        [Required,Column(TypeName = "int")]
+        public uint Prioridad { get; set; }
+        [MaxLength(100)]
         public string Etiqueta { get; set; }
-        public int RegistroSAG { get; set; }
-        public List<Ingrediente_Activo> Ingredientes { get; set; }
-        public string Modo_Accion { get; set; }
+        [Required,Column(TypeName = "int")]
+        public uint RegistroSAG { get; set; }
 
-        public Fitosanitario(uint _idFitosanitario,string _nombreComercial, Presentacion _presentacionInsumo,
-            int _costoNeto,int _costoTotal,string _manoFacturera,string _proveedor,
-            int _prioridad,string _etiqueta,int _registroSag,List<Ingrediente_Activo> _ingredientes,
-            string _modoAccion)
-        {
-            ID_Insumo = _idFitosanitario;
-        }
+        public ICollection<Ingrediente_Activo> Ingredientes { get; set; }
+        public ICollection<PFQ_Fitosanitario> Propiedades_Fitosanitarios { get; set; }
+        [Required,MaxLength(50)]
+        public string Modo_Accion { get; set; }
 
     }
 }

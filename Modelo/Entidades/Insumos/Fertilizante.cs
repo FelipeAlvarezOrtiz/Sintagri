@@ -1,12 +1,24 @@
-﻿namespace Sintagri.Modelo.Entidades.Insumos
-{
-    public class Fertilizante : Insumos
-    {
+﻿using Sintagri.Modelo.Entidades.Misc;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-        public Fertilizante()
-        {
-            
-        }
+namespace Sintagri.Modelo.Entidades
+{
+    public enum Tipo
+    {
+        Granulado = 1,
+        Soluble = 2,
+        Liquido = 3,
+        Gel = 4,
+    }
+    public class Fertilizante : Insumo
+    {
+        [Required,Column(TypeName = "tinyint")]
+        public Tipo Tipo_Formulacion { get; set; }
+        
+        
+        public ICollection<PFQ_Fertilizante> Propiedades_Fertilizante { get; set; }
         
     }
 }

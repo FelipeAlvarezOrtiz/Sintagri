@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Sintagri.Modelo.Entidades.Cultivos
 {
@@ -23,41 +25,27 @@ namespace Sintagri.Modelo.Entidades.Cultivos
 
     public class Cultivo
     {
-        public int IdCultivo { get; set; }
+        [Key, Required,
+            DatabaseGenerated(DatabaseGeneratedOption.Identity)]]
+        public int Id_Cultivo { get; set; }
         //Crear tabla Especie
         public int Especie { get; set; }
+        [Column(TypeName = "smallint")]
         public Tipo_Cultivo Tipo { get; set; }
+        [MaxLength(50)]
         public string Variedad { get; set; }
-        public Tuple<float,float> Profundidad_Raiz { get; set; }
-        public Tuple<int,int> Dias_Cosecha { get; set; }
+        [Column(TypeName = "decimal(8,3)")]
+        public float Profundidad_Raiz_Minima{ get; set; }
+        [Column(TypeName = "decimal(8,3)")]
+        public float Profundidad_Raiz_Maxima { get; set; }
+        public int Dias_Minimos_Cosecha { get; set; }
+        public int Dias_Maximos_Cosecha { get; set; }
+        [MaxLength(100)]
         public string Semillera { get; set; }
+        [Column(TypeName ="smallint")]
         public Formato_Cultivo Formato { get; set; }
+        [Column(TypeName ="smallint")]
         public Proveedor Proveedor { get; set; }
-
-        public Cultivo(int _idCultivo, int _especie, Tipo_Cultivo _tipo,
-            string _variedad, Tuple<float,float> _profundidadRaiz,Tuple<int,int> _cosecha,
-            string _semillera,Formato_Cultivo _formato, Proveedor _proveedor)
-        {
-            IdCultivo = _idCultivo;
-            Especie = _especie;
-            Tipo = _tipo;
-            Variedad = _variedad;
-            Profundidad_Raiz = _profundidadRaiz;
-            Dias_Cosecha = _cosecha;
-            Semillera = _semillera;
-            Formato = _formato;
-            Proveedor = _proveedor;
-        }
-
-        public bool Validar_Tamanos_Raiz(Tuple<float,float> ProfundidadRaiz)
-        {
-            return (ProfundidadRaiz.Item1 < ProfundidadRaiz.Item2) ? true : false;
-        }
-
-        public bool Validar_Dias_Cosecha(Tuple<int,int> DiasCosecha)
-        {
-            return DiasCosecha.Item1 < DiasCosecha.Item2 ? true : false;
-        }
 
     }
 }
