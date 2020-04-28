@@ -12,9 +12,21 @@ namespace Sintagri
 
         private void AdminForm_Load(object sender, System.EventArgs e)
         {
-            var _ordenIngreso = new IngresoOrdenControl(1);
-            _ordenIngreso.Dock = DockStyle.Fill;
-            MainPanel.Controls.Add(_ordenIngreso);
+            var _OptionPane = new MenuSideOptionsControl(this,MainPanel)
+            {
+                Dock = DockStyle.Fill
+            };
+            SideMenuPanel.Controls.Add(_OptionPane);
+
+            //var _ordenIngreso = new IngresoInsumos();
+            //_ordenIngreso.Dock = DockStyle.Fill;
+            //MainPanel.Controls.Add(_ordenIngreso);
+
+        }
+
+        private void ObtenerPerfil_Click(object sender, System.EventArgs e)
+        {
+
         }
     }
 }

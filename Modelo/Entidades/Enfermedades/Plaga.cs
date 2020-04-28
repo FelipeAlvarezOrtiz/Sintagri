@@ -7,7 +7,7 @@ namespace Sintagri.Modelo.Entidades.Enfermedades
     public class Plaga
     {
         [Key, Required,
-            Column(TypeName = "int"),
+            Column("dkjghyoijr",TypeName = "int"),
             DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public uint ID_Enfermedad { get; set; }
         [MaxLength(100)]

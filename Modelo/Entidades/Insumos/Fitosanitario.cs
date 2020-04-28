@@ -8,15 +8,13 @@ namespace Sintagri.Modelo.Entidades
 {
     public class Fitosanitario : Insumo
     {
-        [Required,Column(TypeName = "int")]
-        public uint Prioridad { get; set; }
         [MaxLength(100)]
         public string Etiqueta { get; set; }
         [Required,Column(TypeName = "int")]
-        public uint RegistroSAG { get; set; }
+        public int RegistroSAG { get; set; }
 
-        public ICollection<Ingrediente_Activo> Ingredientes { get; set; }
-        public ICollection<PFQ_Fitosanitario> Propiedades_Fitosanitarios { get; set; }
+        public List<Ingrediente_Activo> Ingredientes { get; set; }
+        public List<PFQ_Fitosanitario> Propiedades_Fitosanitarios { get; set; }
         [Required,MaxLength(50)]
         public string Modo_Accion { get; set; }
 

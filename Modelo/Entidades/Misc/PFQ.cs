@@ -7,7 +7,7 @@ namespace Sintagri.Modelo.Entidades.Misc
     public abstract class PFQ
     {
         [Required, Key, Column(TypeName = "int"),
-            DatabaseGenerated(DatabaseGeneratedOption.Identity)]]
+            DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id_PFQ { get; set; }
         [MaxLength(50)]
         public string Nombre { get; set; }
@@ -21,18 +21,19 @@ namespace Sintagri.Modelo.Entidades.Misc
 
     public class PFQ_Fertilizante : PFQ
     {
-        public uint ID_Insumo { get; set; }
+        public int ID_Insumo { get; set; }
         public Fertilizante Fertilizante { get; set; }
     }
 
     public class PFQ_Agua : PFQ
     {
-        //public int Id_Agua { get; set; }
+        public int Id_Agua { get; set; }
         public Aguas Agua { get; set; }
     }
 
     public class PFQ_Fitosanitario : PFQ
     {
+        public int ID_Insumo { get; set; }
         public Fitosanitario Fitosanitario { get; set; }
     }
 }

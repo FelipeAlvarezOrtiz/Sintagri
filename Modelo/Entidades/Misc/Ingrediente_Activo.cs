@@ -12,7 +12,7 @@ namespace Sintagri.Modelo.Entidades
     public class Ingrediente_Activo
     {
         [Required,Key,Column(TypeName ="int"),
-            DatabaseGenerated(DatabaseGeneratedOption.Identity)]]
+            DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id_Ingrediente { get; set; }
         [Required,MaxLength(100)]
         public string Nombre_Ingrediente { get; set; }

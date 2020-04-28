@@ -28,6 +28,13 @@ namespace Sintagri.Modelo.DataBase.MSSQLServer.Models
                 .AddConsole();
         });
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Relacion_Inventario_Productos>().HasKey(
+                x => new { x.ID_Inventario, x.ID_Insumo });
+            base.OnModelCreating(modelBuilder);
+        }
+
         public DbSet<Agricola> Agricolas { get; set; }
         public DbSet<Inventario> Inventarios { get; set; }
 
@@ -49,7 +56,7 @@ namespace Sintagri.Modelo.DataBase.MSSQLServer.Models
         public DbSet<Agronomo> Agronomos { get; set; }
         public DbSet<Roles> Roles { get; set; }
 
-        //public DbSet<>
+        public DbSet<Relacion_Inventario_Productos> Productos_En_Inventario { get; set; }
 
         public DbSet<Potreros> Potreros { get; set; }
         public DbSet<Predio> Predios { get; set; }

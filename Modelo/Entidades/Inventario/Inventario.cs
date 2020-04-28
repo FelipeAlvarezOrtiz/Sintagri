@@ -13,7 +13,18 @@ namespace Sintagri.Modelo.Entidades.Inventario
         [Key,Required]
         public Agricola Agricola { get; set; }
 
-        public HashSet<Insumo> Insumos_Agricola { get; set; }
-        
+        public List<Relacion_Inventario_Productos> Insumos_Agricola { get; set; }
+
+    }
+
+    public class Relacion_Inventario_Productos
+    {
+        public uint ID_Inventario { get; set; }
+        public Inventario Inventario { get; set; }
+        public uint ID_Insumo { get; set; }
+        public Insumo Insumo { get; set; }
+
+        [Required,Column(TypeName = "int")]
+        public uint Cantidad { get; set; }
     }
 }

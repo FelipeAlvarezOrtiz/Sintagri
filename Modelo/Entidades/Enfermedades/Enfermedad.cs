@@ -15,7 +15,7 @@ namespace Sintagri.Modelo.Entidades.Enfermedades
     public class Enfermedad
     {
         [Key,Required,Column(TypeName = "int"),
-            DatabaseGenerated(DatabaseGeneratedOption.Identity)]]
+            DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public uint ID_Enfermedad { get; set; }
         [MaxLength(100)]
         public string Nombre_Comun { get; set; }

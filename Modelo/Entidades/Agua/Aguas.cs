@@ -22,7 +22,7 @@ namespace Sintagri.Modelo.Entidades
         public string Nombre_Referencia { get; set; }
 
         //Relación 1 a Muchos
-        public ICollection<PFQ_Agua> Propiedades_Agua { get; set; }
+        public List<PFQ_Agua> Propiedades_Agua { get; set; }
 
     }
 }

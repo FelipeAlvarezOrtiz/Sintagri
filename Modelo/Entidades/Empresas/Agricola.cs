@@ -17,16 +17,23 @@ namespace Sintagri.Modelo.Entidades.Empresas
         [Required,MaxLength(50)]
         public string Correo { get; set; }
 
-        public ICollection<Contactos_Telefonicos> Contacto { get; set; }
+        public List<Contactos_Telefonicos> Contacto { get; set; }
 
-        public ICollection<Unidad_Agricola> Propiedades_Agricolas { get; set; }
+        public List<Unidad_Agricola> Propiedades_Agricolas { get; set; }
 
-        public ICollection<Persona> Personal_Agricola { get; set; }
+        public List<Persona> Personal_Agricola { get; set; }
     }
 
     public class Contactos_Telefonicos
     {
+        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int ID_Contactos { get; set; }
         [MaxLength(25)]
         public string Numero_Telefonico { get; set; }
+        
+        [ForeignKey("Agricola_Relacionada")]
+        public uint ID_Agricola { get; set; }
+        public Agricola Agricola { get; set; }
+
     }
 }

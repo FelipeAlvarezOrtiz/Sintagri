@@ -42,7 +42,7 @@ namespace Sintagri.Migrations
 
             modelBuilder.Entity("Sintagri.Modelo.Entidades.Cultivos.Cultivo", b =>
                 {
-                    b.Property<int>("IdCultivo")
+                    b.Property<int>("Id_Cultivo")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -53,111 +53,139 @@ namespace Sintagri.Migrations
                     b.Property<int>("Dias_Minimos_Cosecha")
                         .HasColumnType("int");
 
-                    b.Property<int>("Especie")
-                        .HasColumnType("int");
+                    b.Property<string>("Especie")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<short>("Formato")
                         .HasColumnType("smallint");
 
-                    b.Property<float>("Profundidad_Raiz_Maxima")
-                        .HasColumnType("decimal(8,3");
+                    b.Property<string>("Plantinera")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
-                    b.Property<float>("Profundidad_Raiz_Minima")
-                        .HasColumnType("decimal(8,3");
+                    b.Property<decimal>("Profundidad_Raiz_Maxima")
+                        .HasColumnType("decimal(10,7)");
 
-                    b.Property<short>("Proveedor")
-                        .HasColumnType("smallint");
+                    b.Property<decimal>("Profundidad_Raiz_Minima")
+                        .HasColumnType("decimal(8,3)");
+
+                    b.Property<string>("Prueba")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
 
                     b.Property<string>("Semillera")
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
-                    b.Property<int>("Tipo")
-                        .HasColumnType("int");
+                    b.Property<string>("Tipo")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
 
                     b.Property<string>("Variedad")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.HasKey("IdCultivo");
+                    b.HasKey("Id_Cultivo");
 
                     b.ToTable("Cultivos");
                 });
 
-            modelBuilder.Entity("Sintagri.Modelo.Entidades.Fertilizante", b =>
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Empresas.Agricola", b =>
                 {
-                    b.Property<int>("ID_Insumo")
+                    b.Property<int>("ID_Agricola")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Costo_Neto")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Costo_Total")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Manofacturera")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<byte>("Presentacion_Insumo")
-                        .HasColumnName("Presentacion")
-                        .HasColumnType("tinyint");
-
-                    b.Property<string>("Proveedor")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<byte>("Tipo_Formulacion")
-                        .HasColumnType("tinyint");
-
-                    b.HasKey("ID_Insumo");
-
-                    b.ToTable("Fertilizantes");
-                });
-
-            modelBuilder.Entity("Sintagri.Modelo.Entidades.Fitosanitario", b =>
-                {
-                    b.Property<int>("ID_Insumo")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("Costo_Neto")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Costo_Total")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Etiqueta")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<string>("Manofacturera")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<string>("Modo_Accion")
+                    b.Property<string>("Correo")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<byte>("Presentacion_Insumo")
-                        .HasColumnName("Presentacion")
-                        .HasColumnType("tinyint");
+                    b.Property<string>("Nombre_Fantasia")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
 
-                    b.Property<int>("Prioridad")
+                    b.Property<string>("Rut_Empresa")
+                        .IsRequired()
+                        .HasColumnName("RUT_Empresa")
+                        .HasColumnType("nvarchar(25)")
+                        .HasMaxLength(25);
+
+                    b.HasKey("ID_Agricola");
+
+                    b.ToTable("Agricolas");
+                });
+
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Empresas.Contactos_Telefonicos", b =>
+                {
+                    b.Property<int>("ID_Contactos")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("AgricolaID_Agricola")
                         .HasColumnType("int");
 
-                    b.Property<string>("Proveedor")
+                    b.Property<long>("ID_Agricola")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Numero_Telefonico")
+                        .HasColumnType("nvarchar(25)")
+                        .HasMaxLength(25);
+
+                    b.HasKey("ID_Contactos");
+
+                    b.HasIndex("AgricolaID_Agricola");
+
+                    b.ToTable("Contactos_Telefonicos");
+                });
+
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Enfermedades.Enfermedad", b =>
+                {
+                    b.Property<int>("ID_Enfermedad")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<byte>("Aparicion")
+                        .HasColumnName("Epoca_Aparicion")
+                        .HasColumnType("tinyint");
+
+                    b.Property<string>("Nombre_Cientifico")
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
-                    b.Property<int>("RegistroSAG")
+                    b.Property<string>("Nombre_Comun")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.HasKey("ID_Enfermedad");
+
+                    b.ToTable("Enfermedades");
+                });
+
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Enfermedades.Plaga", b =>
+                {
+                    b.Property<int>("ID_Enfermedad")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("dkjghyoijr")
                         .HasColumnType("int");
 
-                    b.HasKey("ID_Insumo");
+                    b.Property<byte>("Aparicion")
+                        .HasColumnName("Epoca_Aparicion")
+                        .HasColumnType("tinyint");
 
-                    b.ToTable("Fitosanitarios");
+                    b.Property<string>("Nombre_Cientifico")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Nombre_Comun")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.HasKey("ID_Enfermedad");
+
+                    b.ToTable("Plagas");
                 });
 
             modelBuilder.Entity("Sintagri.Modelo.Entidades.Ingrediente_Activo", b =>
@@ -197,6 +225,95 @@ namespace Sintagri.Migrations
                     b.ToTable("Ingredientes_Activos");
                 });
 
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Insumo", b =>
+                {
+                    b.Property<int>("ID_Insumo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Costo_Neto")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Costo_Total")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Manofacturera")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Nombre_Comercial")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<byte>("Presentacion_Insumo")
+                        .HasColumnName("Presentacion")
+                        .HasColumnType("tinyint");
+
+                    b.Property<int>("Prioridad")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Proveedor")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<int>("Subprioridad")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID_Insumo");
+
+                    b.ToTable("Insumo");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Insumo");
+                });
+
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Inventario.Inventario", b =>
+                {
+                    b.Property<int>("ID_Inventario")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("AgricolaID_Agricola")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID_Inventario");
+
+                    b.HasIndex("AgricolaID_Agricola");
+
+                    b.ToTable("Inventarios");
+                });
+
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Inventario.Relacion_Inventario_Productos", b =>
+                {
+                    b.Property<long>("ID_Inventario")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("ID_Insumo")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("InsumoID_Insumo")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("InventarioID_Inventario")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID_Inventario", "ID_Insumo");
+
+                    b.HasIndex("InsumoID_Insumo");
+
+                    b.HasIndex("InventarioID_Inventario");
+
+                    b.ToTable("Productos_En_Inventario");
+                });
+
             modelBuilder.Entity("Sintagri.Modelo.Entidades.Misc.Formulacion", b =>
                 {
                     b.Property<int>("Id_Formulacion")
@@ -231,6 +348,9 @@ namespace Sintagri.Migrations
                         .HasColumnType("nvarchar(35)")
                         .HasMaxLength(35);
 
+                    b.Property<int>("Id_Agua")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nombre")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
@@ -264,8 +384,8 @@ namespace Sintagri.Migrations
                     b.Property<int?>("FertilizanteID_Insumo")
                         .HasColumnType("int");
 
-                    b.Property<long>("ID_Insumo")
-                        .HasColumnType("bigint");
+                    b.Property<int>("ID_Insumo")
+                        .HasColumnType("int");
 
                     b.Property<string>("Nombre")
                         .HasColumnType("nvarchar(50)")
@@ -300,6 +420,9 @@ namespace Sintagri.Migrations
                     b.Property<int?>("FitosanitarioID_Insumo")
                         .HasColumnType("int");
 
+                    b.Property<int>("ID_Insumo")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nombre")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
@@ -319,73 +442,228 @@ namespace Sintagri.Migrations
                     b.ToTable("Propiedades_Fitosanitarios");
                 });
 
-            modelBuilder.Entity("Sintagri.Modelo.Entidades.Potreros", b =>
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Trabajadores.Persona", b =>
                 {
-                    b.Property<long>("ID")
+                    b.Property<int>("ID_Trabajador")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnName("RUT_Trabajador")
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<long?>("Predio_PertenencienteID")
-                        .HasColumnType("bigint");
+                    b.Property<int?>("AgricolaID_Agricola")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Apellido_Materno")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
+
+                    b.Property<string>("Apellido_Paterno")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
+
+                    b.Property<string>("Comuna")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Correo")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Direccion")
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nacionalidad")
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
+
+                    b.Property<string>("Nombres")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Numero_Contacto_Emergencia")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("Numero_Contacto_Principal")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("Region")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<int?>("RolID_Rol")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID_Trabajador");
+
+                    b.HasIndex("AgricolaID_Agricola");
+
+                    b.HasIndex("RolID_Rol");
+
+                    b.ToTable("Persona");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Persona");
+                });
+
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Trabajadores.Roles", b =>
+                {
+                    b.Property<int>("ID_Rol")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombre_Rol")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.HasKey("ID_Rol");
+
+                    b.ToTable("Roles");
+                });
+
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Unidad_Agricola", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Agricola_ID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Empresa_PropietariaID_Agricola")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(35)")
+                        .HasMaxLength(35);
+
+                    b.Property<decimal>("Superficie_Hectareas")
+                        .HasColumnName("Superficie")
+                        .HasColumnType("decimal(15,3)");
 
                     b.HasKey("ID");
 
+                    b.HasIndex("Empresa_PropietariaID_Agricola");
+
+                    b.ToTable("Unidad_Agricola");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Unidad_Agricola");
+                });
+
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Fertilizante", b =>
+                {
+                    b.HasBaseType("Sintagri.Modelo.Entidades.Insumo");
+
+                    b.Property<byte>("Tipo_Formulacion")
+                        .HasColumnType("tinyint");
+
+                    b.HasDiscriminator().HasValue("Fertilizante");
+                });
+
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Fitosanitario", b =>
+                {
+                    b.HasBaseType("Sintagri.Modelo.Entidades.Insumo");
+
+                    b.Property<string>("Etiqueta")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Modo_Accion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<int>("RegistroSAG")
+                        .HasColumnType("int");
+
+                    b.HasDiscriminator().HasValue("Fitosanitario");
+                });
+
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Trabajadores.Agronomo", b =>
+                {
+                    b.HasBaseType("Sintagri.Modelo.Entidades.Trabajadores.Persona");
+
+                    b.Property<int?>("Agricola_PertenencienteID_Agricola")
+                        .HasColumnType("int");
+
+                    b.HasIndex("Agricola_PertenencienteID_Agricola");
+
+                    b.HasDiscriminator().HasValue("Agronomo");
+                });
+
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Potreros", b =>
+                {
+                    b.HasBaseType("Sintagri.Modelo.Entidades.Unidad_Agricola");
+
+                    b.Property<int?>("Predio_PertenencienteID")
+                        .HasColumnType("int");
+
                     b.HasIndex("Predio_PertenencienteID");
 
-                    b.ToTable("Potreros");
+                    b.HasDiscriminator().HasValue("Potreros");
                 });
 
             modelBuilder.Entity("Sintagri.Modelo.Entidades.Predio", b =>
                 {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                    b.HasBaseType("Sintagri.Modelo.Entidades.Unidad_Agricola");
 
-                    b.HasKey("ID");
-
-                    b.ToTable("Predios");
+                    b.HasDiscriminator().HasValue("Predio");
                 });
 
             modelBuilder.Entity("Sintagri.Modelo.Entidades.Sectores", b =>
                 {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                    b.HasBaseType("Sintagri.Modelo.Entidades.Unidad_Agricola");
 
-                    b.Property<long?>("Potrero_pertenecienteID")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("ID");
+                    b.Property<int?>("Potrero_pertenecienteID")
+                        .HasColumnType("int");
 
                     b.HasIndex("Potrero_pertenecienteID");
 
-                    b.ToTable("Sectores");
+                    b.HasDiscriminator().HasValue("Sectores");
                 });
 
             modelBuilder.Entity("Sintagri.Modelo.Entidades.Valvulas", b =>
                 {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                    b.HasBaseType("Sintagri.Modelo.Entidades.Unidad_Agricola");
 
-                    b.Property<int?>("Cultivo_ActualIdCultivo")
+                    b.Property<int?>("Cultivo_ActualId_Cultivo")
                         .HasColumnType("int");
 
                     b.Property<int?>("Origen_RiegoId_Agua")
                         .HasColumnType("int");
 
-                    b.Property<long?>("SectorID")
-                        .HasColumnType("bigint");
+                    b.Property<int?>("SectorID")
+                        .HasColumnType("int");
 
-                    b.HasKey("ID");
-
-                    b.HasIndex("Cultivo_ActualIdCultivo");
+                    b.HasIndex("Cultivo_ActualId_Cultivo");
 
                     b.HasIndex("Origen_RiegoId_Agua");
 
                     b.HasIndex("SectorID");
 
-                    b.ToTable("Valvulas");
+                    b.HasDiscriminator().HasValue("Valvulas");
+                });
+
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Empresas.Contactos_Telefonicos", b =>
+                {
+                    b.HasOne("Sintagri.Modelo.Entidades.Empresas.Agricola", "Agricola")
+                        .WithMany("Contacto")
+                        .HasForeignKey("AgricolaID_Agricola");
                 });
 
             modelBuilder.Entity("Sintagri.Modelo.Entidades.Ingrediente_Activo", b =>
@@ -393,6 +671,26 @@ namespace Sintagri.Migrations
                     b.HasOne("Sintagri.Modelo.Entidades.Fitosanitario", "Insumo")
                         .WithMany("Ingredientes")
                         .HasForeignKey("InsumoID_Insumo");
+                });
+
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Inventario.Inventario", b =>
+                {
+                    b.HasOne("Sintagri.Modelo.Entidades.Empresas.Agricola", "Agricola")
+                        .WithMany()
+                        .HasForeignKey("AgricolaID_Agricola")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Inventario.Relacion_Inventario_Productos", b =>
+                {
+                    b.HasOne("Sintagri.Modelo.Entidades.Insumo", "Insumo")
+                        .WithMany("Insumos_Agricola")
+                        .HasForeignKey("InsumoID_Insumo");
+
+                    b.HasOne("Sintagri.Modelo.Entidades.Inventario.Inventario", "Inventario")
+                        .WithMany("Insumos_Agricola")
+                        .HasForeignKey("InventarioID_Inventario");
                 });
 
             modelBuilder.Entity("Sintagri.Modelo.Entidades.Misc.PFQ_Agua", b =>
@@ -416,6 +714,31 @@ namespace Sintagri.Migrations
                         .HasForeignKey("FitosanitarioID_Insumo");
                 });
 
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Trabajadores.Persona", b =>
+                {
+                    b.HasOne("Sintagri.Modelo.Entidades.Empresas.Agricola", null)
+                        .WithMany("Personal_Agricola")
+                        .HasForeignKey("AgricolaID_Agricola");
+
+                    b.HasOne("Sintagri.Modelo.Entidades.Trabajadores.Roles", "Rol")
+                        .WithMany()
+                        .HasForeignKey("RolID_Rol");
+                });
+
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Unidad_Agricola", b =>
+                {
+                    b.HasOne("Sintagri.Modelo.Entidades.Empresas.Agricola", "Empresa_Propietaria")
+                        .WithMany("Propiedades_Agricolas")
+                        .HasForeignKey("Empresa_PropietariaID_Agricola");
+                });
+
+            modelBuilder.Entity("Sintagri.Modelo.Entidades.Trabajadores.Agronomo", b =>
+                {
+                    b.HasOne("Sintagri.Modelo.Entidades.Empresas.Agricola", "Agricola_Pertenenciente")
+                        .WithMany()
+                        .HasForeignKey("Agricola_PertenencienteID_Agricola");
+                });
+
             modelBuilder.Entity("Sintagri.Modelo.Entidades.Potreros", b =>
                 {
                     b.HasOne("Sintagri.Modelo.Entidades.Predio", "Predio_Pertenenciente")
@@ -434,7 +757,7 @@ namespace Sintagri.Migrations
                 {
                     b.HasOne("Sintagri.Modelo.Entidades.Cultivos.Cultivo", "Cultivo_Actual")
                         .WithMany()
-                        .HasForeignKey("Cultivo_ActualIdCultivo");
+                        .HasForeignKey("Cultivo_ActualId_Cultivo");
 
                     b.HasOne("Sintagri.Modelo.Entidades.Aguas", "Origen_Riego")
                         .WithMany()

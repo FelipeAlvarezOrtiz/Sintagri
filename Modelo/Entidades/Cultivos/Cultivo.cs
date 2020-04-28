@@ -26,17 +26,17 @@ namespace Sintagri.Modelo.Entidades.Cultivos
     public class Cultivo
     {
         [Key, Required,
-            DatabaseGenerated(DatabaseGeneratedOption.Identity)]]
+            DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id_Cultivo { get; set; }
         //Crear tabla Especie
-        public int Especie { get; set; }
-        [Column(TypeName = "smallint")]
-        public Tipo_Cultivo Tipo { get; set; }
+        public string Especie { get; set; }
+        [MaxLength(20)]
+        public string Tipo { get; set; }
         [MaxLength(50)]
         public string Variedad { get; set; }
         [Column(TypeName = "decimal(8,3)")]
         public float Profundidad_Raiz_Minima{ get; set; }
-        [Column(TypeName = "decimal(8,3)")]
+        [Column(TypeName = "decimal(10,7)")]
         public float Profundidad_Raiz_Maxima { get; set; }
         public int Dias_Minimos_Cosecha { get; set; }
         public int Dias_Maximos_Cosecha { get; set; }
@@ -44,8 +44,10 @@ namespace Sintagri.Modelo.Entidades.Cultivos
         public string Semillera { get; set; }
         [Column(TypeName ="smallint")]
         public Formato_Cultivo Formato { get; set; }
-        [Column(TypeName ="smallint")]
-        public Proveedor Proveedor { get; set; }
+        [MaxLength(50)]
+        public string Plantinera { get; set; }
+        [MaxLength(20)]
+        public string Prueba { get; set; }
 
     }
 }

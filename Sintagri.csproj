@@ -181,9 +181,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\20200424132028_Initial.cs" />
-    <Compile Include="Migrations\20200424132028_Initial.designer.cs">
-      <DependentUpon>20200424132028_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\20200428163441_Presentacion.cs" />
+    <Compile Include="Migrations\20200428163441_Presentacion.designer.cs">
+      <DependentUpon>20200428163441_Presentacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SQLServerDbContextModelSnapshot.cs" />
     <Compile Include="Modelo\DataBase\MSSQLServer\Models\SQLServerDbContext.cs" />
@@ -223,17 +223,53 @@
     <Compile Include="UI\Formularios\Informaciones.Designer.cs">
       <DependentUpon>Informaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UsersControl\CamposControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UsersControl\CamposControl.Designer.cs">
+      <DependentUpon>CamposControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UsersControl\DisplayInfoControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\UsersControl\DisplayInfoControl.Designer.cs">
       <DependentUpon>DisplayInfoControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UsersControl\IngresoInsumos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UsersControl\IngresoInsumos.Designer.cs">
+      <DependentUpon>IngresoInsumos.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UsersControl\IngresoOrdenControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\UsersControl\IngresoOrdenControl.Designer.cs">
       <DependentUpon>IngresoOrdenControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UsersControl\InventarioControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UsersControl\InventarioControl.Designer.cs">
+      <DependentUpon>InventarioControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UsersControl\MenuSideOptionsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UsersControl\MenuSideOptionsControl.Designer.cs">
+      <DependentUpon>MenuSideOptionsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UsersControl\PropiedadesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UsersControl\PropiedadesControl.Designer.cs">
+      <DependentUpon>PropiedadesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UsersControl\VegetalesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UsersControl\VegetalesControl.Designer.cs">
+      <DependentUpon>VegetalesControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="UI\Formularios\AdminUI.resx">
       <DependentUpon>AdminUI.cs</DependentUpon>
@@ -251,11 +287,29 @@
     <EmbeddedResource Include="UI\Formularios\Informaciones.resx">
       <DependentUpon>Informaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\UsersControl\CamposControl.resx">
+      <DependentUpon>CamposControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UsersControl\DisplayInfoControl.resx">
       <DependentUpon>DisplayInfoControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\UsersControl\IngresoInsumos.resx">
+      <DependentUpon>IngresoInsumos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UsersControl\IngresoOrdenControl.resx">
       <DependentUpon>IngresoOrdenControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UsersControl\InventarioControl.resx">
+      <DependentUpon>InventarioControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UsersControl\MenuSideOptionsControl.resx">
+      <DependentUpon>MenuSideOptionsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UsersControl\PropiedadesControl.resx">
+      <DependentUpon>PropiedadesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UsersControl\VegetalesControl.resx">
+      <DependentUpon>VegetalesControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -275,7 +329,20 @@
     <None Include="Resources\search.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Modelo\DataBase\MSSQLServer\Sets\" />
     <Folder Include="Modelo\Entidades\Registros\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grass-WF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Monitor-WF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Transport-Van.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

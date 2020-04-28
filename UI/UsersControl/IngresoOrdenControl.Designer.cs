@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngresoOrdenControl));
             this.MainLayout = new System.Windows.Forms.TableLayoutPanel();
             this.TopLayout = new System.Windows.Forms.TableLayoutPanel();
             this.AgricolaLayout = new System.Windows.Forms.TableLayoutPanel();
             this.Maquinadas = new System.Windows.Forms.Label();
-            this.Mojamiento = new System.Windows.Forms.Label();
+            this.MojamientoTB = new System.Windows.Forms.Label();
             this.Variedad = new System.Windows.Forms.Label();
             this.Cultivo = new System.Windows.Forms.Label();
-            this.TotalHectareas = new System.Windows.Forms.Label();
+            this.TotalHectareasTB = new System.Windows.Forms.Label();
             this.SubsectorLayout = new System.Windows.Forms.TableLayoutPanel();
             this.SubsectorFind = new System.Windows.Forms.PictureBox();
             this.SubsectorSeleccionado = new System.Windows.Forms.Label();
@@ -56,6 +56,8 @@
             this.PredioFind = new System.Windows.Forms.PictureBox();
             this.PrediosSeleccionados = new System.Windows.Forms.Label();
             this.EtapaLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.EtapasLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SectorLayout = new System.Windows.Forms.TableLayoutPanel();
             this.SectorFind = new System.Windows.Forms.PictureBox();
             this.SectorSeleccionado = new System.Windows.Forms.Label();
@@ -88,6 +90,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.SubsectorFind)).BeginInit();
             this.PredioLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PredioFind)).BeginInit();
+            this.EtapaLayout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SectorLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SectorFind)).BeginInit();
             this.FechaOTLayout.SuspendLayout();
@@ -145,10 +149,10 @@
             this.AgricolaLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.AgricolaLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.AgricolaLayout.Controls.Add(this.Maquinadas, 5, 2);
-            this.AgricolaLayout.Controls.Add(this.Mojamiento, 3, 2);
+            this.AgricolaLayout.Controls.Add(this.MojamientoTB, 3, 2);
             this.AgricolaLayout.Controls.Add(this.Variedad, 1, 2);
             this.AgricolaLayout.Controls.Add(this.Cultivo, 5, 1);
-            this.AgricolaLayout.Controls.Add(this.TotalHectareas, 3, 1);
+            this.AgricolaLayout.Controls.Add(this.TotalHectareasTB, 3, 1);
             this.AgricolaLayout.Controls.Add(this.SubsectorLayout, 1, 1);
             this.AgricolaLayout.Controls.Add(this.VariedadLabel, 0, 2);
             this.AgricolaLayout.Controls.Add(this.PredioLabel, 0, 0);
@@ -186,18 +190,18 @@
             this.Maquinadas.Text = "Maquinadas";
             this.Maquinadas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Mojamiento
+            // MojamientoTB
             // 
-            this.Mojamiento.AutoSize = true;
-            this.Mojamiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
-            this.Mojamiento.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Mojamiento.Location = new System.Drawing.Point(696, 95);
-            this.Mojamiento.Margin = new System.Windows.Forms.Padding(3);
-            this.Mojamiento.Name = "Mojamiento";
-            this.Mojamiento.Size = new System.Drawing.Size(225, 40);
-            this.Mojamiento.TabIndex = 24;
-            this.Mojamiento.Text = "Mojamiento";
-            this.Mojamiento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.MojamientoTB.AutoSize = true;
+            this.MojamientoTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
+            this.MojamientoTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MojamientoTB.Location = new System.Drawing.Point(696, 95);
+            this.MojamientoTB.Margin = new System.Windows.Forms.Padding(3);
+            this.MojamientoTB.Name = "MojamientoTB";
+            this.MojamientoTB.Size = new System.Drawing.Size(225, 40);
+            this.MojamientoTB.TabIndex = 24;
+            this.MojamientoTB.Text = "Mojamiento";
+            this.MojamientoTB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Variedad
             // 
@@ -209,7 +213,7 @@
             this.Variedad.Name = "Variedad";
             this.Variedad.Size = new System.Drawing.Size(225, 40);
             this.Variedad.TabIndex = 23;
-            this.Variedad.Text = "Subsector";
+            this.Variedad.Text = "Variedades";
             this.Variedad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Cultivo
@@ -225,18 +229,18 @@
             this.Cultivo.Text = "Cultivos";
             this.Cultivo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // TotalHectareas
+            // TotalHectareasTB
             // 
-            this.TotalHectareas.AutoSize = true;
-            this.TotalHectareas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
-            this.TotalHectareas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TotalHectareas.Location = new System.Drawing.Point(696, 49);
-            this.TotalHectareas.Margin = new System.Windows.Forms.Padding(3);
-            this.TotalHectareas.Name = "TotalHectareas";
-            this.TotalHectareas.Size = new System.Drawing.Size(225, 40);
-            this.TotalHectareas.TabIndex = 21;
-            this.TotalHectareas.Text = "Total Hectareas";
-            this.TotalHectareas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TotalHectareasTB.AutoSize = true;
+            this.TotalHectareasTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
+            this.TotalHectareasTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TotalHectareasTB.Location = new System.Drawing.Point(696, 49);
+            this.TotalHectareasTB.Margin = new System.Windows.Forms.Padding(3);
+            this.TotalHectareasTB.Name = "TotalHectareasTB";
+            this.TotalHectareasTB.Size = new System.Drawing.Size(225, 40);
+            this.TotalHectareasTB.TabIndex = 21;
+            this.TotalHectareasTB.Text = "Total Hectareas";
+            this.TotalHectareasTB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SubsectorLayout
             // 
@@ -447,6 +451,8 @@
             this.EtapaLayout.ColumnCount = 2;
             this.EtapaLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.88889F));
             this.EtapaLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.11111F));
+            this.EtapaLayout.Controls.Add(this.EtapasLabel, 0, 0);
+            this.EtapaLayout.Controls.Add(this.pictureBox1, 1, 0);
             this.EtapaLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EtapaLayout.Location = new System.Drawing.Point(696, 3);
             this.EtapaLayout.Name = "EtapaLayout";
@@ -454,6 +460,30 @@
             this.EtapaLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.EtapaLayout.Size = new System.Drawing.Size(225, 40);
             this.EtapaLayout.TabIndex = 18;
+            // 
+            // EtapasLabel
+            // 
+            this.EtapasLabel.AutoSize = true;
+            this.EtapasLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
+            this.EtapasLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EtapasLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EtapasLabel.Location = new System.Drawing.Point(3, 3);
+            this.EtapasLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.EtapasLabel.Name = "EtapasLabel";
+            this.EtapasLabel.Size = new System.Drawing.Size(167, 34);
+            this.EtapasLabel.TabIndex = 2;
+            this.EtapasLabel.Text = "Potreros";
+            this.EtapasLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Sintagri.Properties.Resources.search;
+            this.pictureBox1.Location = new System.Drawing.Point(176, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(46, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // SectorLayout
             // 
@@ -685,6 +715,8 @@
             this.InsumoInput.Name = "InsumoInput";
             this.InsumoInput.Size = new System.Drawing.Size(272, 34);
             this.InsumoInput.TabIndex = 2;
+            this.InsumoInput.TextChanged += new System.EventHandler(this.InsumoInput_TextChanged);
+            this.InsumoInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPresionado_Event);
             // 
             // FiltroCB
             // 
@@ -707,28 +739,28 @@
             this.InsumosDataGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.InsumosDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.InsumosDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.InsumosDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(213)))), ((int)(((byte)(129)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.InsumosDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.InsumosDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.InsumosDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_insumo,
             this.nombre_insumo,
             this.maquinada,
             this.unidad_insumo});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.InsumosDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.InsumosDataGrid.DefaultCellStyle = dataGridViewCellStyle5;
             this.InsumosDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.InsumosDataGrid.EnableHeadersVisualStyles = false;
             this.InsumosDataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(166)))), ((int)(((byte)(207)))));
@@ -736,10 +768,10 @@
             this.InsumosDataGrid.Margin = new System.Windows.Forms.Padding(7);
             this.InsumosDataGrid.Name = "InsumosDataGrid";
             this.InsumosDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
-            this.InsumosDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(181)))), ((int)(((byte)(66)))));
+            this.InsumosDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.InsumosDataGrid.RowTemplate.Height = 24;
             this.InsumosDataGrid.Size = new System.Drawing.Size(1380, 330);
             this.InsumosDataGrid.TabIndex = 1;
@@ -787,7 +819,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1388, 49);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
@@ -842,6 +874,7 @@
             this.Cancelar_Orden_Button.Size = new System.Drawing.Size(275, 47);
             this.Cancelar_Orden_Button.TabIndex = 1;
             this.Cancelar_Orden_Button.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Cancelar_Orden_Button.Click += new System.EventHandler(this.Cancelar_Orden_Button_Click);
             // 
             // IngresoOrdenControl
             // 
@@ -860,6 +893,9 @@
             this.PredioLayout.ResumeLayout(false);
             this.PredioLayout.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PredioFind)).EndInit();
+            this.EtapaLayout.ResumeLayout(false);
+            this.EtapaLayout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.SectorLayout.ResumeLayout(false);
             this.SectorLayout.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SectorFind)).EndInit();
@@ -918,12 +954,14 @@
         private System.Windows.Forms.Label SubsectorSeleccionado;
         private System.Windows.Forms.Label SectorSeleccionado;
         private System.Windows.Forms.Label Maquinadas;
-        private System.Windows.Forms.Label Mojamiento;
+        private System.Windows.Forms.Label MojamientoTB;
         private System.Windows.Forms.Label Variedad;
         private System.Windows.Forms.Label Cultivo;
-        private System.Windows.Forms.Label TotalHectareas;
+        private System.Windows.Forms.Label TotalHectareasTB;
         private System.Windows.Forms.Label NOAIInput;
         private Bunifu.Framework.UI.BunifuThinButton2 Ingresar_Orden_Button;
         private Bunifu.Framework.UI.BunifuThinButton2 Cancelar_Orden_Button;
+        private System.Windows.Forms.Label EtapasLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

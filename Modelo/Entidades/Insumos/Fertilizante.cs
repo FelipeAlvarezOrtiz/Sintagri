@@ -17,8 +17,7 @@ namespace Sintagri.Modelo.Entidades
         [Required,Column(TypeName = "tinyint")]
         public Tipo Tipo_Formulacion { get; set; }
         
-        
-        public ICollection<PFQ_Fertilizante> Propiedades_Fertilizante { get; set; }
+        public List<PFQ_Fertilizante> Propiedades_Fertilizante { get; set; }
         
     }
 }

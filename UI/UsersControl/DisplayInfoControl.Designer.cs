@@ -129,6 +129,7 @@
             this.Aceptar_Button.Size = new System.Drawing.Size(203, 68);
             this.Aceptar_Button.TabIndex = 2;
             this.Aceptar_Button.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Aceptar_Button.Click += new System.EventHandler(this.Aceptar_Button_Click);
             // 
             // CheckboxPanel
             // 

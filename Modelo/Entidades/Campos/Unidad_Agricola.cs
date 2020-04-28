@@ -10,30 +10,32 @@ namespace Sintagri.Modelo.Entidades
     {
         [Required, Key,
             DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public uint ID { get; set; }
+        public int ID { get; set; }
         [Required, MaxLength(35)]
         public string Nombre { get; set; }
-        [Required, Column("Superficie", TypeName = "decimal(15,3")]
-        public uint Superficie_Hectareas { get; set; }
+        [Required, Column("Superficie", TypeName = "decimal(15,3)")]
+        public float Superficie_Hectareas { get; set; }
         
+        public int Agricola_ID { get; set; }
         public Agricola Empresa_Propietaria { get; set; }
     }
     
     public class Predio : Unidad_Agricola
     {
-        public ICollection<Potreros> Potreros { get; set; }
+        public List<Potreros> Potreros { get; set; }
     }
 
     public class Potreros : Unidad_Agricola
     {
+
         public Predio Predio_Pertenenciente { get; set; }
-        public ICollection<Sectores> Sectores { get; set; }
+        public List<Sectores> Sectores { get; set; }
     }
 
     public class Sectores : Unidad_Agricola
     {
         public Potreros Potrero_perteneciente { get; set; }
-        public ICollection<Valvulas> Valvulas { get; set; }
+        public List<Valvulas> Valvulas { get; set; }
     }
 
     public class Valvulas : Unidad_Agricola
